@@ -7,6 +7,12 @@ let game = {
 
 function newGame() {
     game.score = 0;
+    game.playerMoves = [];
+    game.currentGame = []
 }
 
-module.exports = { game, newGame };
+function showScore() {
+    document.getElementById("score").innerText = game.score;
+}
+
+module.exports = { game, newGame, showScore };
