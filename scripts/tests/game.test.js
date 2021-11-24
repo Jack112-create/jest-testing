@@ -3,7 +3,7 @@
  * @jest-environment jsdom
  */
 
- const { game } = require("../game");
+ const { game, newGame } = require("../game");
 
 
  beforeAll(() => {
@@ -31,3 +31,13 @@
          expect(game.choices).toEqual(["button1", "button2", "button3", "button4"]);
      });
  });
+
+ describe("newGame works correctly", () => {
+     beforeAll(() => {
+        game.score = 42;
+        newGame();
+     });
+     test("Should set game score to zero", () => {
+        expect(game.score).toEqual(0);
+     })
+ })
